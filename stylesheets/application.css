@@ -1,0 +1,120 @@
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+.nav > li {
+  float: left;
+  line-height: 24px;
+}
+
+.nav > li + li:before {
+  content: '|';
+  margin: 0 0.5em;
+}
+
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 750px;
+  height: 100vh;
+  min-width: 1100px;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+header {
+  padding: 40px;
+}
+
+header h1 img {
+  height: 24px;
+}
+
+a {
+  text-decoration: none;
+  color: #888;
+}
+
+a:hover {
+  color: #333;
+}
+
+.main-content {
+  padding-left: 8%;
+  padding-right: 600px;
+}
+
+.main-content h2 {
+  margin-top: 120px;
+  margin-bottom: 20px;
+}
+
+.main-content p {
+  line-height: 1.8;
+}
+
+.circle-bg-img {
+  position: absolute;
+  right: -140px;
+  bottom: 0;
+  width: 720px;
+  height: 580px;
+  overflow: hidden;
+}
+
+.circle-bg-img.animate img {
+  -webkit-transform: rotate(30deg);
+     -moz-transform: rotate(30deg);
+      -ms-transform: rotate(30deg);
+       -o-transform: rotate(30deg);
+          transform: rotate(30deg);
+  -webkit-transition: transform 2s;
+       -o-transition: transform 2s;
+          transition: transform 2s;
+
+}
+
+.phone-img {
+  width: 300px;
+  position: absolute;
+  right: 100px;
+  bottom: 90px;
+}
+
+.downloads {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.downloads img {
+  width: 150px;
+}
+
+.downloads a + a {
+  margin-left: 30px;
+}
