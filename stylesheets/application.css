@@ -87,16 +87,12 @@ a:hover {
   overflow: hidden;
 }
 
-.circle-bg-img.animate img {
-  -webkit-transform: rotate(30deg);
-     -moz-transform: rotate(30deg);
-      -ms-transform: rotate(30deg);
-       -o-transform: rotate(30deg);
-          transform: rotate(30deg);
+.circle-bg-img img {
+  position: absolute;
+  top: 0;
   -webkit-transition: transform 2s;
        -o-transition: transform 2s;
           transition: transform 2s;
-
 }
 
 .phone-img {

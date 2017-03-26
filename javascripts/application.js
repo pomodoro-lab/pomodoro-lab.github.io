@@ -13,24 +13,20 @@ $(function() {
     }, 1000);
   };
 
-  function resetCircleImg() {
-    var bgImg = $('.circle-bg-img');
-    bgImg.removeClass('animate');
-  };
-
-  function animateCircleImg() {
-    var bgImg = $('.circle-bg-img');
-    bgImg.addClass('animate');
+  function rotateCircleImg(deg) {
+    $('.circle-bg-img img:nth-child(2)').css('transform', 'rotate(' + deg + 'deg)');
   };
 
   function gotoPage(page) {
     if (page.length > 0) {
       clearTimeout(timeout);
       $('.page.active, .phone-img.active').removeClass('active');
-      resetCircleImg();
       page.addClass('active');
       $('#' + page.attr('id') + '_img').addClass('active');
-      timeout = setTimeout(animateCircleImg, 10);
+      var deg = 90 * $('.page').index($('.page.active')) / $('.page').length;
+      timeout = setTimeout(function() {
+        rotateCircleImg(deg);
+      }, 10);
       var indicators = $('.carousel-indicators');
       indicators.children('.active').removeClass('active');
       indicators.children("[data-target='#" + page.attr('id') + "']").addClass('active');
