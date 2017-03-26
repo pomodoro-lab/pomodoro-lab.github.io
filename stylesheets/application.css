@@ -80,10 +80,10 @@ a:hover {
 
 .circle-bg-img {
   position: absolute;
-  right: -140px;
+  right: -130px;
   bottom: 0;
-  width: 720px;
-  height: 580px;
+  width: 760px;
+  height: 572px;
   overflow: hidden;
 }
 
@@ -103,7 +103,24 @@ a:hover {
   width: 300px;
   position: absolute;
   right: 100px;
-  bottom: 90px;
+  bottom: 40px;
+  border-radius: 40px;
+  box-shadow: 0 15px 25px rgba(0,0,0,.13);
+  opacity: 0;
+  -webkit-transition: opacity 0.2s;
+       -o-transition: opacity 0.2s;
+          transition: opacity 0.2s;    
+}
+
+.phone-img.bg-active {
+  opacity: 100;
+}
+
+.phone-img.active {
+  opacity: 100;
+  -webkit-transition: opacity 2s;
+       -o-transition: opacity 2s;
+          transition: opacity 2s;    
 }
 
 .downloads {
@@ -117,4 +134,49 @@ a:hover {
 
 .downloads a + a {
   margin-left: 30px;
+}
+
+.pages {
+  position: relative;
+  max-width: 500px;
+}
+
+.page {
+  opacity: 0;
+  padding-top: 1px;
+  -webkit-transition: opacity 0.2s;
+       -o-transition: opacity 0.2s;
+          transition: opacity 0.2s;
+}
+
+.page + .page {
+  position: absolute;
+  top: 0;
+}
+
+.page.active {
+  opacity: 100;
+  -webkit-transition: opacity 2s;
+       -o-transition: opacity 2s;
+          transition: opacity 2s;  
+}
+
+.carousel-indicators {
+  list-style: none;
+  position: fixed;
+  right: 30px;
+  top: calc(50% - 70px);
+}
+
+.carousel-indicators > li {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,.3);
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+.carousel-indicators > li.active {
+  background-color: #FFF;
 }
