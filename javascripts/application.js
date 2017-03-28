@@ -49,9 +49,15 @@ $(function() {
   }
 
   if ($.os.phone) {
-    var hammertime = new Hammer(document);
-    hammertime.get('swipe').set({ direction: Hammer.DIRECTION_HORIZONTAL });
-
+    var hammertime = new Hammer.Manager(document, {
+      touchAction: 'auto',
+      inputClass: Hammer.SUPPORT_POINTER_EVENTS ? Hammer.PointerEventInput : Hammer.TouchInput,
+      recognizers: [
+        [Hammer.Swipe, {
+          direction: Hammer.DIRECTION_HORIZONTAL
+        }]
+      ]
+    });
     hammertime.on('swipeleft', function() {
       gotoNextPage();
     });

@@ -177,16 +177,17 @@ a:hover {
 }
 
 .carousel-indicators > li {
-  width: 6px;
-  height: 6px;
+  width: 4px;
+  height: 4px;
   border-radius: 50%;
   background-color: rgba(0,0,0,.3);
-  margin: 15px 0;
+  margin: 10px 0;
   cursor: pointer;
 }
 
 .carousel-indicators > li.active {
   background-color: #FFF;
+  box-shadow: 0 0 1px rgba(0,0,0,.3);
 }
 
 @media screen and (max-width: 480px) {
