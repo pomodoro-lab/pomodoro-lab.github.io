@@ -3,6 +3,9 @@ $(function() {
   $('.carousel-indicators').on('click', 'li', function() {
     gotoPage($($(this).attr('data-target')));
   });
+  new Hammer($('.navbar-toggle')[0]).on('tap', function() {
+    $('.nav').toggleClass('collapse-in');
+  })
 
   var scrolled = false;
   var timeout = null;
@@ -33,15 +36,27 @@ $(function() {
     }
   };
 
+  function gotoNextPage() {
+    var page = $('.page.active').next('.page');
+    if (page.length == 0) { page = $('.page:first-child') }
+    gotoPage(page);
+  }
+
+  function gotoPrevPage() {
+    var page = $('.page.active').prev('.page');
+    if (page.length == 0) { page = $('.page:last-child') }
+    gotoPage(page);
+  }
+
   if ($.os.phone) {
     var hammertime = new Hammer(document);
     hammertime.get('swipe').set({ direction: Hammer.DIRECTION_HORIZONTAL });
 
     hammertime.on('swipeleft', function() {
-      gotoPage($('.page.active').next('.page'));
+      gotoNextPage();
     });
     hammertime.on('swiperight', function() {
-      gotoPage($('.page.active').prev('.page'));
+      gotoPrevPage();
     });
   } else {
     function onWindowBottom() {
@@ -56,10 +71,10 @@ $(function() {
       if (!scrolled) {
         if(e.wheelDeltaY < 0 && onWindowBottom()) {
           markScroll();
-          gotoPage($('.page.active').next('.page'));
+          gotoNextPage();
         } else if(e.wheelDeltaY > 0 && onWindowTop()) {
           markScroll();
-          gotoPage($('.page.active').prev('.page'));
+          gotoPrevPage();
         }
       }
     });

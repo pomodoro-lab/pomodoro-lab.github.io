@@ -185,14 +185,6 @@ a:hover {
   background-color: #FFF;
 }
 
-@media screen and (max-width: 992px) {
-
-}
-
-@media screen and (max-width: 768px) {
-
-}
-
 @media screen and (max-width: 480px) {
   body {
     min-width: 0;
@@ -206,8 +198,39 @@ a:hover {
   header h1 img {
     height: 18px;
   }
-  header > .nav {
+  header .nav {
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: all 0.5s;
+         -o-transition: all 0.5s;
+            transition: all 0.5s;  
+  }
+
+  header .nav.collapse-in {
+    height: 34px;
+    clear: left;
+    padding-top: 10px;
+  }
+
+  .navbar-toggle {
+    padding: 2px;
+  }
+
+  .navbar-toggle:focus .icon-bar {
+    border-color: #333;
+  }
+
+  .navbar-toggle .sr-only {
     display: none;
+  }
+  .navbar-toggle .icon-bar {
+    border-top: 2px solid #888;
+    width: 15px;
+    display: block;
+  }
+
+  .navbar-toggle .icon-bar + .icon-bar {
+    margin-top: 4px;
   }
 
   h2 {
