@@ -184,3 +184,98 @@ a:hover {
 .carousel-indicators > li.active {
   background-color: #FFF;
 }
+
+@media screen and (max-width: 992px) {
+
+}
+
+@media screen and (max-width: 768px) {
+
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    min-width: 0;
+    min-height: 0;
+    height: cal(100vh + 1px);
+  }
+  header {
+    padding: 5% 6%;
+  }
+
+  header h1 img {
+    height: 18px;
+  }
+  header > .nav {
+    display: none;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .bigger {
+    font-size: 1em;
+  }
+
+  .main-content {
+    padding: 0;
+  }
+  .main-content h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    min-height: 0;
+  }
+
+  .circle-bg-img {
+    height: 63%;
+    right: 0;
+    width: 100%;
+  }
+
+  .circle-bg-img img {
+    max-width: none;
+    width: 144%;
+    margin-left: -22%;
+  }
+
+  .phone-img {
+    width: auto;
+    height: 64.5%;
+    right: 0;
+    left: 0;
+    bottom: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 26px;
+  }
+
+  .pages {
+    padding-left: 6%;
+    width: 88%;
+  }
+
+  .page p {
+    line-height: 1.5;
+  }
+
+  #page_1 p {
+    display: none;
+  }
+
+  .downloads {
+    padding: 0;
+    position: absolute;
+    bottom: 1.5%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .downloads img {
+    width: 32%;
+  }
+
+  .downloads a + a {
+    margin-left: 20px;
+  }
+}

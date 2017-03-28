@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
   <title>Pomodoro Lab</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" type="text/css" href="stylesheets/minireset.min.css">
   <link rel="stylesheet" type="text/css" href="stylesheets/application.css">
   <script src="javascripts/zepto.min.js"></script>
-  <script src="javascripts/zepto-fx.js"></script>
-  <script async src="javascripts/application.js"></script>
+  <script src="javascripts/zepto-detect.js"></script>
+  <script src="javascripts/hammer.min.js"></script>
+  <script src="javascripts/hammer-time.min.js"></script>
 </head>
 <body>
   <header class="clearfix">
@@ -21,14 +22,6 @@
     </ul>
   </header>
   <div class="main-content">
-    <div class="circle-bg-img"><img src="images/circle.png"><img src="images/circle.png"></div>
-    <img src="images/iphone-frame.png" class="phone-img bg-active">
-    <img src="images/iphone-tasks.png" class="phone-img active" id="page_1_img">
-    <img src="images/iphone-pomodoro.png" class="phone-img" id="page_2_img">
-    <img src="images/iphone-addup.png" class="phone-img" id="page_3_img">
-    <img src="images/iphone-countdown.png" class="phone-img" id="page_4_img">
-    <img src="images/iphone-statistics-1.png" class="phone-img" id="page_5_img">
-    <img src="images/iphone-statistics-2.png" class="phone-img" id="page_6_img">
     <div class="pages">
       <div class="page active" id="page_1">
         <h2>Pomodoro is a kind of work and lifestyle</h2>
@@ -55,6 +48,16 @@
         <p class="bigger">Count the time ratio between each day / week / month / year / each task</p>
       </div>
     </div>
+    <div class="circle-bg-img"><img src="images/circle.png"><img src="images/circle.png"></div>
+    <div class="phone-images">
+      <img src="images/iphone-frame.png" class="phone-img bg-active">
+      <img src="images/iphone-tasks.png" class="phone-img active" id="page_1_img">
+      <img src="images/iphone-pomodoro.png" class="phone-img" id="page_2_img">
+      <img src="images/iphone-addup.png" class="phone-img" id="page_3_img">
+      <img src="images/iphone-countdown.png" class="phone-img" id="page_4_img">
+      <img src="images/iphone-statistics-1.png" class="phone-img" id="page_5_img">
+      <img src="images/iphone-statistics-2.png" class="phone-img" id="page_6_img">
+    </div>    
     <div class="downloads">
       <a href="#"><img src="images/app-store.png"></a>
       <a href="https://play.google.com/store/apps/details?id=com.ppyg.pomodorotechnique" target="_blank"><img src="images/google-play.png"></a>
@@ -68,5 +71,7 @@
       <li data-target='#page_6'></li>
     </ol>
   </div>
+
+  <script async src="javascripts/application.js"></script>
 </body>
 </html>
