@@ -4,7 +4,7 @@ $(function() {
     gotoPage($($(this).attr('data-target')));
   });
   new Hammer($('.navbar-toggle')[0]).on('tap', function() {
-    $('.nav').toggleClass('collapse-in');
+    $('.navbar-toggle, .nav').toggleClass('collapse-in');
   })
 
   var scrolled = false;

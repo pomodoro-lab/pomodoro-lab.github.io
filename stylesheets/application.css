@@ -198,10 +198,10 @@ a:hover {
   body {
     min-width: 0;
     min-height: 0;
-    height: cal(100vh + 1px);
   }
   header {
     padding: 5% 6%;
+    overflow: hidden;
   }
 
   header h1 img {
@@ -209,20 +209,52 @@ a:hover {
   }
   header .nav {
     height: 0;
+    float: none;
+    background-color: #EEE;
+    margin-bottom: 5%;
     overflow: hidden;
-    -webkit-transition: all 0.5s;
-         -o-transition: all 0.5s;
-            transition: all 0.5s;  
+    font-size: 1.2em;
+    margin-left: -8%;
+    margin-right: -8%;
+    margin-top: -6%;
+    -webkit-transition: height 0.5s;
+         -o-transition: height 0.5s;
+            transition: height 0.5s;
   }
 
   header .nav.collapse-in {
-    height: 34px;
+    height: 180px;
     clear: left;
-    padding-top: 10px;
+  }
+
+  .nav > li {
+    float: none;
+  }
+
+  .nav > li:first-child {
+    margin-top: 20px;
+  }
+
+  .nav > li a {
+    display: block;
+    padding: 2px 7%;
+  }
+
+  .nav > li + li:before {
+    content: '';
+    margin: 0;
   }
 
   .navbar-toggle {
-    padding: 2px;
+    padding: 5px;
+    margin-top: -2px;
+  }
+
+  .navbar-toggle.collapse-in {
+    transform: rotate(-90deg);
+    -webkit-transition: transform 0.5s;
+         -o-transition: transform 0.5s;
+            transition: transform 0.5s;    
   }
 
   .navbar-toggle:focus .icon-bar {
