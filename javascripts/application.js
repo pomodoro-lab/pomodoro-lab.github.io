@@ -7,14 +7,7 @@ $(function() {
     $('.navbar-toggle, .nav').toggleClass('collapse-in');
   })
 
-  var scrolled = false;
   var timeout = null;
-  function markScroll() {
-    scrolled = true;
-    setTimeout(function() {
-      scrolled = false;
-    }, 1000);
-  };
 
   function rotateCircleImg(deg) {
     $('.circle-bg-img img:nth-child(2)').css('transform', 'rotate(' + deg + 'deg)');
@@ -65,6 +58,14 @@ $(function() {
       gotoPrevPage();
     });
   } else {
+    var scrolled = false;
+    function markScroll() {
+      scrolled = true;
+      setTimeout(function() {
+        scrolled = false;
+      }, 1000);
+    };
+
     function onWindowBottom() {
       return ($(window).scrollTop() + $(window).height()) === $(document).height();
     }
